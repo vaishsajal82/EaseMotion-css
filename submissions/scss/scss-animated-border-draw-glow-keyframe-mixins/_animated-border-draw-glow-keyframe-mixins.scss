@@ -3,6 +3,7 @@
 // EaseMotion CSS Submission
 // ==========================================
 
+<<<<<<< HEAD
 // Border Drawing Animation
 @mixin animated-border-draw(
   $color: #3498db,
@@ -11,16 +12,32 @@
 ) {
   position: relative;
   border: $width solid transparent;
+=======
+// Border Draw Animation Mixin
+@mixin animated-border-draw(
+  $color: #00ffff,
+  $border-width: 2px,
+  $duration: 1.5s
+) {
+  position: relative;
+  border: $border-width solid transparent;
+>>>>>>> main
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
+<<<<<<< HEAD
     border: $width solid $color;
+=======
+    border: $border-width solid $color;
+    clip-path: inset(100% 100% 100% 100%);
+>>>>>>> main
     animation: border-draw $duration linear forwards;
   }
 }
 
+<<<<<<< HEAD
 // Glow Effect
 @mixin border-glow(
   $glow-color: #3498db,
@@ -30,6 +47,20 @@
 }
 
 // Keyframe Animation
+=======
+// Glow Border Animation Mixin
+@mixin animated-border-glow(
+  $color: #00ffff,
+  $blur: 12px,
+  $duration: 2s
+) {
+  border: 2px solid $color;
+  animation: border-glow $duration infinite alternate;
+  box-shadow: 0 0 $blur $color;
+}
+
+// Keyframes: Border Draw
+>>>>>>> main
 @keyframes border-draw {
   0% {
     clip-path: inset(100% 100% 100% 100%);
@@ -38,4 +69,19 @@
   100% {
     clip-path: inset(0 0 0 0);
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+// Keyframes: Glow Pulse
+@keyframes border-glow {
+  from {
+    box-shadow: 0 0 5px currentColor;
+  }
+
+  to {
+    box-shadow: 0 0 20px currentColor;
+  }
+}
+>>>>>>> main
